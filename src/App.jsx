@@ -6,6 +6,7 @@ import Dev from './Counter.jsx'
 import Test01 from './Test-01.jsx'
 import Hideshow from './Hideshow.jsx'
 import Multicon from './Multi-condition.jsx'
+import Prompt from './Prompt.jsx'
 
 
 function App() {
@@ -48,6 +49,30 @@ function App() {
 const [display, setdisplay] = useState(false)
 
 
+// let name1 = "Dharmik"
+// let age1 = 25
+// let gender1 = "Male"
+
+let userlist ={
+  name : "Dipen",
+age : 25,
+ gender : "Male",
+}
+
+let userlist2 ={
+  name : "Aashutosh",
+  age : 30,
+  gender : "Male",
+}
+
+let userlist3 ={
+  name : "Dharmik",
+  age : 25,
+  gender : "Male",
+}
+let collegename = ["IIT" , "DU" , "NIT" , "MIT"]
+      const  [student , setstudent]= useState()
+
   return (
     <>
       <h1>
@@ -78,6 +103,18 @@ const [display, setdisplay] = useState(false)
            
         }
       <Multicon />
+      {/* <Prompt name="Ashutosh" age={30} gender="Male"/>
+      <Prompt name={name1} age={age1} gender={gender1}/> */}
+      {/* <Prompt user={userlist}/>
+      <Prompt user={userlist2}/>
+      <Prompt user={userlist3}/>
+      <Prompt namec={collegename}/>
+      <Prompt namec={collegename[0]}/> */}
+      {/* <Prompt studenname={"Manish"}/> */}
+      {
+        student &&  <Prompt name={student} />
+      }
+      <button onClick={() => setstudent("John")}>Student Name change</button>
 
 
     </>
